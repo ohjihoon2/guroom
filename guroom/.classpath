@@ -37,5 +37,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/apache-commons.jar"/>
 	<classpathentry kind="lib" path="lib/apache-log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc8.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
