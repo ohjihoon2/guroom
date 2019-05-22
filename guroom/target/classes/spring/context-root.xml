@@ -4,5 +4,20 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+       id="dataSource">
+       <property value="oracle.jdbc.driver.OracleDriver" name="driverClassName" />
+       <property value="jdbc:oracle:thin:@localhost:1521:ORCL" name="url" />
+       <property value="xxxxxx" name="username" />
+       <property value="oooooo" name="password" />
+    </bean>
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="SqlSessionFactory">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:/mybatis-config.xml" />
+        <property value="classpath:/mappers/**/*Mapper.xml" name="mapperLocations" />
+    </bean>
+    
+    <bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession" destroy-method="clearCache">
+        <constructor-arg name="sqlSessionFactory" ref="SqlSessionFactory" />
+    </bean>
 </beans>
