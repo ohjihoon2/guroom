@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.mycom.guroom">
+	<logger name="co.mycom.guroom">
 		<level value="info" />
 	</logger>
 	
